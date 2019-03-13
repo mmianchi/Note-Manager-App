@@ -6,31 +6,35 @@ function(e) {
 
 
   var addInput = document.getElementById('add-input');
-  var li = document.createElement('li'),
-      firstPar = document.createElement('p'),
-      SecondPar = document.createElement('p'),
-      firstIcon = document.createElement('i'),
-      SecondIcon = document.createElement('i'),
-      input = document.createElement('input');
 
-  firstIcon.className = 'fa fa-pencil-square-o';
-  SecondIcon.className = 'fa fa-times';
+  if (addInput.value === '') {
+    alert('Add a note')
+  } else {
+    var li = document.createElement('li'),
+        firstPar = document.createElement('p'),
+        SecondPar = document.createElement('p'),
+        firstIcon = document.createElement('i'),
+        SecondIcon = document.createElement('i'),
+        input = document.createElement('input');
 
-  input.className = 'edit-note'
-  input.setAttribute('type', 'text');
-  firstPar.textContent = addInput.value;
+    firstIcon.className = 'fa fa-pencil-square-o';
+    SecondIcon.className = 'fa fa-times';
+
+    input.className = 'edit-note'
+    input.setAttribute('type', 'text');
+    firstPar.textContent = addInput.value;
 
 
-  SecondPar.appendChild(firstIcon);
-  SecondPar.appendChild(SecondIcon);
+    SecondPar.appendChild(firstIcon);
+    SecondPar.appendChild(SecondIcon);
 
-  li.appendChild(firstPar);
-  li.appendChild(SecondPar);
-  li.appendChild(input);
+    li.appendChild(firstPar);
+    li.appendChild(SecondPar);
+    li.appendChild(input);
+    ul.appendChild(li);
+    addInput.value = '';
 
-  
-console.log(li)
-
+  }
 
 })
 
