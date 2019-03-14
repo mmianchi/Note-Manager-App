@@ -37,7 +37,7 @@ function(e) {
   }
 })
 
-//Edit and delete
+//Edit and delete note
 ul.addEventListener('click', function(e){
   if (e.target.classList[1]=== 'fa-pencil-square-o') {
     let parentPar = e.target.parentNode;
@@ -66,16 +66,21 @@ ul.addEventListener('click', function(e){
     var list = e.target.parentNode.parentNode
     list.parentNode.removeChild(list);
   }
-
 })
 
+//Hide notes
 
+var hideItem = document.getElementById('hide');
 
-
-
-
-
-
+hideItem.addEventListener('click', function(){
+  if(hideItem.checked){
+    ul.style.display = 'none';
+    hideItem.previousElementSibling.textContent = "Unhide Notes"
+  } else {
+    ul.style.display = 'block';
+    hideItem.previousElementSibling.textContent = "Hide Notes"
+  }
+})
 
 
 
