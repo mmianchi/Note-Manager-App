@@ -1,16 +1,17 @@
-var ul = document.querySelector('ul');
+let ul = document.querySelector('ul');
 
+//add note
 document.getElementById('add-btn').addEventListener('click',
 function(e) {
   e.preventDefault();
 
 
-  var addInput = document.getElementById('add-input');
+  let addInput = document.getElementById('add-input');
 
   if (addInput.value === '') {
     alert('Add a note')
   } else {
-    var li = document.createElement('li'),
+    let li = document.createElement('li'),
         firstPar = document.createElement('p'),
         SecondPar = document.createElement('p'),
         firstIcon = document.createElement('i'),
@@ -33,10 +34,51 @@ function(e) {
     li.appendChild(input);
     ul.appendChild(li);
     addInput.value = '';
+  }
+})
 
+//Edit and delete
+ul.addEventListener('click', function(e){
+  if (e.target.classList[1]=== 'fa-pencil-square-o') {
+    let parentPar = e.target.parentNode;
+    parentPar.style.display = 'none';
+
+    let note = parentPar.previousElementSibling;
+    let input = parentPar.nextElementSibling;
+
+    input.style.display= 'block';
+    input.value = note.textContent;
   }
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
