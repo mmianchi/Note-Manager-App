@@ -83,7 +83,14 @@ hideItem.addEventListener('click', function(){
 })
 
 
+//Search filter
 
+var SearchInput = document.querySelector('#search-note input')
+
+
+SearchInput.addEventListener(keyup, function(){
+
+})
 
 
 
